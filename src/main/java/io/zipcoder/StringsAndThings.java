@@ -70,7 +70,14 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        for(int i = 0; i < input.length()-1; i++){
+            if(input.charAt(i) == 'g'){
+                if (input.charAt(i+1) == 'g' || input.charAt(i-1) == 'g'){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
@@ -82,6 +89,12 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int counter = 0;
+        for(int i =1; i < input.length()-1; i++){
+            if(input.charAt(i) == input.charAt(i+1) && input.charAt(i) == input.charAt(i-1)){
+                counter++;
+            }
+        }
+        return counter;
     }
 }
